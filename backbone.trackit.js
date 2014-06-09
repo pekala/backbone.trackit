@@ -46,10 +46,13 @@
     if (prompt) {
       if (confirm(prompt + ' \n\nAre you sure you want to leave this page?')) {
         oldNav.call(this, fragment, options);
+        return true;
       }
     } else {
       oldNav.call(this, fragment, options);
+      return true;
     }
+    return false;
   });
 
   // Create a browser unload handler which is triggered
